@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Sonastik_Rogovski", "Sonastik_Rogovski.pyproj", "{0B51C3E1-8197-4700-89CE-818976875C70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B51C3E1-8197-4700-89CE-818976875C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B51C3E1-8197-4700-89CE-818976875C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D9E3449-8EA9-4A7D-9A51-EE89BA2DDBF6}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,5 @@
+﻿Accurate
+True
+Indent
+Condition
+Error message
