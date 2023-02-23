@@ -1,6 +1,5 @@
-﻿Accurate
+Accurate
 True
 Indent
 Condition
 Error message
-Hello
