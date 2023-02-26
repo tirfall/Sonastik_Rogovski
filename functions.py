@@ -2,6 +2,7 @@ from os import *
 from gtts import gTTS
 from random import *
 import io
+from pydub import AudioSegment
 
 def estrus_trans(rus_list,est_list,eng_list):
     slovo=input('sisesta sõna: ')
@@ -19,7 +20,7 @@ def estrus_trans(rus_list,est_list,eng_list):
         print(f"{slovo.upper()} ei ole sõnastikus")
         v=input("kas te soovite lisa sõna?")
         #v = v.title
-        if v.lower()=="jah":uus_sona()
+        if v.lower()=="jah":uus_sona(rus_list,est_list,eng_list)
         else:
             pass
 
@@ -61,16 +62,16 @@ def Heli(rus_list,est_list,eng_list):
         print(f"{slovo} - {est_list[ind]} - {eng_list[ind]}")
         text= slovo
         keel="ru"
-        gTTS(text=text, lang=keel, slow=False).save("heli.mp3")
-        system("heli.mp3")
+        ju=gTTS(text=text, lang=keel, slow=False)
+        ju.save("heli1.mp3")
         text= est_list[ind]
         keel="et"
-        gTTS(text=text, lang=keel, slow=False).save("heli.mp3")
-        system("heli.mp3")
+        ju2=gTTS(text=text, lang=keel, slow=False)
+        ju2.save("heli2.mp3")
         text= eng_list[ind]
         keel="en"
-        gTTS(text=text, lang=keel, slow=False).save("heli.mp3")
-        system("heli.mp3")
+        ju3=gTTS(text=text, lang=keel, slow=False)
+        ju3.save("heli3.mp3")
     elif slovo in est_list:
         ind=est_list.index(slovo)
         print(f"{slovo} - {rus_list[ind]} - {eng_list[ind]}")
@@ -81,5 +82,18 @@ def Heli(rus_list,est_list,eng_list):
         text= slovo,rus_list[ind],est_list[ind]
     #gTTS(text=text, lang=keel, slow=False).save("heli.mp3")
     system("heli.mp3")
+def Heli2():
+        sound1 = AudioSegment.from_mp3("C:\\Users\\tirfall\\source\\repos\\tirfall\\Sonastik_Rogovski\\heli1.mp3")
+        sound2 = AudioSegment.from_mp3("C:\\Users\\tirfall\\source\\repos\\tirfall\\Sonastik_Rogovski\\heli2.mp3")
+        sound3 = AudioSegment.from_mp3("C:\\Users\\tirfall\\source\\repos\\tirfall\\Sonastik_Rogovski\\heli3.mp3")
+        finalsound=sound1+sound2+sound3
+        finalsound.export("C:\\Users\\tirfall\\source\\repos\\tirfall\\Sonastik_Rogovski\\heli.mp3", format="mp3")
+        
+
+#from pydub import AudioSegment
+#sound1 = AudioSegment.from_mp3("/home/user/bleach.mp3")
+#sound2 = AudioSegment.from_mp3("/home/user/dollar.mp3")
+#sound3=sound1+sound2
+#sound3.export("/home/user/3.mp3", format="mp3")
 
 
