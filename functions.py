@@ -2,7 +2,7 @@ from os import *
 from gtts import gTTS
 from random import *
 import io
-from pydub import AudioSegment
+from pydub import *
 
 def estrus_trans(rus_list,est_list,eng_list):
     slovo=input('sisesta sõna: ')
@@ -51,6 +51,7 @@ def salvestamine(fail,jarjend):
      f.write('\n')
     f.close()
 
+
 def Heli(rus_list,est_list,eng_list):
     """
     Helime failis
@@ -96,4 +97,17 @@ def Heli2():
 #sound3=sound1+sound2
 #sound3.export("/home/user/3.mp3", format="mp3")
 
-
+def parandada(rus_list,est_list,eng_list):
+    slovo=input('sisesta sõna: ')
+    slovo = slovo.title()
+    if slovo in rus_list:
+        ind=rus_list.index(slovo)
+        milline
+    elif slovo in est_list:
+        ind=est_list.index(slovo)
+        print(f"{slovo} - {rus_list[ind]} - {eng_list[ind]}")
+    elif slovo in eng_list:
+        ind=eng_list.index(slovo)
+        print(f"{slovo} - {rus_list[ind]} - {est_list[ind]}")
+    else:
+        print(f"{slovo.upper()} ei ole sõnastikus")
