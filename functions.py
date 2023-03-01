@@ -19,7 +19,6 @@ def estrus_trans(rus_list,est_list,eng_list):
     else:
         print(f"{slovo.upper()} ei ole sõnastikus")
         v=input("kas te soovite lisa sõna?")
-        #v = v.title
         if v.lower()=="jah":uus_sona(rus_list,est_list,eng_list)
         else:
             pass
@@ -81,14 +80,16 @@ def Heli(rus_list,est_list,eng_list):
         ind=eng_list.index(slovo)
         print(f"{slovo} - {rus_list[ind]} - {est_list[ind]}")
         text= slovo,rus_list[ind],est_list[ind]
+    Heli2
     #gTTS(text=text, lang=keel, slow=False).save("heli.mp3")
-    system("heli.mp3")
+    
 def Heli2():
         sound1 = AudioSegment.from_mp3("C:\\Users\\tirfall\\source\\repos\\tirfall\\Sonastik_Rogovski\\heli1.mp3")
         sound2 = AudioSegment.from_mp3("C:\\Users\\tirfall\\source\\repos\\tirfall\\Sonastik_Rogovski\\heli2.mp3")
         sound3 = AudioSegment.from_mp3("C:\\Users\\tirfall\\source\\repos\\tirfall\\Sonastik_Rogovski\\heli3.mp3")
         finalsound=sound1+sound2+sound3
         finalsound.export("C:\\Users\\tirfall\\source\\repos\\tirfall\\Sonastik_Rogovski\\heli.mp3", format="mp3")
+        system("heli.mp3")
         
 
 #from pydub import AudioSegment
@@ -114,6 +115,10 @@ def parandada(rus_list,est_list,eng_list):
         paran
     else:
         print(f"{slovo.upper()} ei ole sõnastikus")
+        v=input("kas te soovite lisa sõna?")
+        if v.lower()=="jah":uus_sona(rus_list,est_list,eng_list)
+        else:
+            pass
     return ind
 
 def paran (rus_list,est_list,eng_list,ind):
@@ -140,8 +145,11 @@ def test (rus_list,est_list,eng_list):
         ind=x.index(word)
         print(word)
         slovo2=str(input("Sisesta sõna vene keeles: "))
+        slovo2 = slovo2.title
         slovo3=str(input("Sisesta sõna eesti keeles: "))
+        slovo3 = slovo3.title
         slovo4=str(input("Sisesta sõna inglise keeles: "))
+        slovo4 = slovo4.title
         if slovo2 in rus_list and slovo3 in est_list and slovo4 in eng_list:
             indrus=rus_list.index(slovo2)
             indest=est_list.index(slovo3)
@@ -158,4 +166,4 @@ def test (rus_list,est_list,eng_list):
     print(goodans,"Õiged vastused")
     print(badans,"Valed vastused")
     finalscore=goodans/anstest*100
-    print(finalscore)
+    print(finalscore, "%")
