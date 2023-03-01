@@ -157,5 +157,5 @@ def test (rus_list,est_list,eng_list):
             print("Vale vatus")
     print(goodans,"Õiged vastused")
     print(badans,"Valed vastused")
-    finalscore=(anstest/100)*goodans
+    finalscore=goodans/anstest*100
     print(finalscore)
