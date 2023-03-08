@@ -1,4 +1,5 @@
 from os import *
+from shutil import SpecialFileError
 from gtts import gTTS
 from random import *
 import io
@@ -44,11 +45,16 @@ def loe_failist(f):
     return mas
 
 def salvestamine(fail,jarjend):
-    f = io.open(fail, "w", encoding="utf-8-sig")
-    for element in jarjend:
-     f.write(str(element))
-     f.write('\n')
-    f.close()
+    try:
+        f = io.open(fail, "w", encoding="utf-8-sig")
+        for element in jarjend:
+         f.write(str(element))
+         f.write('\n')
+        f.close()
+        print("Succesful")
+    except:
+        SpecialFileError
+        print("Faili salvestamine viga")
 
 
 def Heli(rus_list,est_list,eng_list):
@@ -144,12 +150,9 @@ def test (rus_list,est_list,eng_list):
         word = choice(x)
         ind=x.index(word)
         print(word)
-        slovo2=str(input("Sisesta sõna vene keeles: "))
-        slovo2 = slovo2.title
-        slovo3=str(input("Sisesta sõna eesti keeles: "))
-        slovo3 = slovo3.title
-        slovo4=str(input("Sisesta sõna inglise keeles: "))
-        slovo4 = slovo4.title
+        slovo2=str(input("Sisesta sõna vene keeles: ")).title()
+        slovo3=str(input("Sisesta sõna eesti keeles: ")).title()
+        slovo4=str(input("Sisesta sõna inglise keeles: ")).title()
         if slovo2 in rus_list and slovo3 in est_list and slovo4 in eng_list:
             indrus=rus_list.index(slovo2)
             indest=est_list.index(slovo3)
@@ -162,7 +165,7 @@ def test (rus_list,est_list,eng_list):
                 print("Vale vastus")
         else:
             badans += 1
-            print("Vale vatus")
+            print("Vale vastus")
     print(goodans,"Õiged vastused")
     print(badans,"Valed vastused")
     finalscore=goodans/anstest*100

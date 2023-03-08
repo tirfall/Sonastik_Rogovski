@@ -4,5 +4,6 @@ Taand
 Tingimus
 Veateade
 Tere
-Koer1
+Koer
 Kass
+Kott

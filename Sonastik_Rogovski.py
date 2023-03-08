@@ -10,17 +10,20 @@ while True:
         if choice == 1:
             Heli(rus,est,eng)
         elif choice == 0:
-            salvestamine("est.txt",est)
-            salvestamine("rus.txt",rus)
-            salvestamine("eng.txt",eng)
-            break
+            salvchoice = str(input("Kas sa tahad salvesta? ")).title()
+            if salvchoice == "Jah":
+                salvestamine("est.txt",est)
+                salvestamine("rus.txt",rus)
+                salvestamine("eng.txt",eng)
+                break
+            else:
+                break
         elif choice == 2:
             uus_sona(rus,est,eng)
         elif choice == 3:
             test(rus,est,eng)
         elif choice == 4:
             ind=parandada(rus,est,eng)
-            print(ind)
             paran(rus,est,eng,ind)
         elif choice == 5:
             estrus_trans(rus,est,eng)
@@ -36,4 +39,4 @@ while True:
             print(rus,est,eng)
     except:
         ValueError
-        print("Vali õige number")
+        print("Vale andmetüüp")
