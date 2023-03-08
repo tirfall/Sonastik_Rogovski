@@ -1,4 +1,5 @@
 from functions import *
+import io
 
 password=8484
 
@@ -40,13 +41,14 @@ while True:
         elif choice == 8:
             print(rus,est,eng)
         elif choice == 9:
-            anspass=int(input("Sisesta password"))
+            anspass=int(input("Sisesta password: "))
             if anspass == password:
                 adminchoice = int(input("1 - loe failid reservist\n"))
                 if adminchoice == 1:
                     est:list=loe_failist("reserve/est.txt")
                     rus:list=loe_failist("reserve/rus.txt")
                     eng:list=loe_failist("reserve/eng.txt")
+                    
     except:
         ValueError
         print("Vale andmetüüp")

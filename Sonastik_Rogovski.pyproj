@@ -28,6 +28,7 @@
     <Content Include="est.txt" />
     <Content Include="eng.txt" />
     <Content Include="rus.txt" />
+    <Content Include="password.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
